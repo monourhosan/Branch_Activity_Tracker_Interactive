@@ -1,0 +1,22 @@
+{
+  "name": "branch-activity-tracker-interactive",
+  "version": "1.0.0",
+  "description": "IRC + Bank Asia Mystery Shopping & Field Activities Management Dashboard (68 Branches, 698 Activities)",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve .",
+    "dev": "serve .",
+    "build": "echo 'Static site ready for Vercel deployment'"
+  },
+  "keywords": [
+    "bank-asia",
+    "irc",
+    "mystery-shopping",
+    "audit-tracker",
+    "compliance",
+    "dashboard",
+    "field-auditor"
+  ],
+  "author": "Monour Hosan Saif <monourhosan>",
+  "license": "MIT"
+}
