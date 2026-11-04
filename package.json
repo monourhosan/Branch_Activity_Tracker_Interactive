@@ -4,9 +4,7 @@
   "description": "IRC + Bank Asia Mystery Shopping & Field Activities Management Dashboard (68 Branches, 698 Activities)",
   "main": "index.html",
   "scripts": {
-    "start": "serve .",
-    "dev": "serve .",
-    "build": "echo 'Static site ready for Vercel deployment'"
+    "start": "serve ."
   },
   "keywords": [
     "bank-asia",
@@ -14,8 +12,7 @@
     "mystery-shopping",
     "audit-tracker",
     "compliance",
-    "dashboard",
-    "field-auditor"
+    "dashboard"
   ],
   "author": "Monour Hosan Saif <monourhosan>",
   "license": "MIT"
