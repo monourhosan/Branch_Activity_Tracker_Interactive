@@ -1027,6 +1027,11 @@
     }
 
     render();
+    if (window.location.hash === '#charts') {
+      setViewMode('charts');
+    } else if (window.location.hash === '#table') {
+      setViewMode('table');
+    }
   </script>
 </body>
 </html>
