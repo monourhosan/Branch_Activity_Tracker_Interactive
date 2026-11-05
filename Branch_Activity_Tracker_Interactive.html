@@ -1,68 +1,260 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IRC + Bank Asia — Branch Activity & Compliance Tracker</title>
-  <meta name="description" content="Live Interactive Branch Activity & Mystery Shopping Tracker for Bank Asia (68 Branches, 698 Activities across 3 Regions). Track Yes/No status, dates, and times.">
-  <meta property="og:title" content="IRC + Bank Asia — Branch Activity & Compliance Tracker">
-  <meta property="og:description" content="68 Branches | 698 Target Activities | Live Dynamic Progress Tracking with Date & Time Logs">
-  <meta property="og:type" content="website">
+  <title>Bank Asia & IRC — Branch Activities & Mystery Shopping Portal</title>
+  <meta name="description" content="ইনোভেটিভ ক্রিয়েশন লিমিটেড (IRC) ও ব্যাংক এশিয়া মিস্ট্রি শপিং ও ফিল্ড অডিট পোর্টাল। ৬৮টি ব্রাঞ্চ এবং ৬৯৮টি অ্যাক্টিভিটি ট্র্যাকিং।">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏦</text></svg>">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-    body { font-family: 'Inter', sans-serif; }
-    .slot-na { background-color: #f1f5f9; color: #94a3b8; border-color: #e2e8f0; }
+    body { font-family: 'Inter', 'Hind Siliguri', sans-serif; }
+    .bn { font-family: 'Hind Siliguri', sans-serif; }
+    .slot-na { background-color: #f8fafc; color: #94a3b8; border-color: #e2e8f0; }
     .slot-done { background-color: #f0fdf4; border-color: #86efac; }
     .slot-pending { background-color: #ffffff; border-color: #e2e8f0; }
-    .badge-12 { background-color: #dbeafe; color: #1e40af; border: 1px solid #bfdbfe; }
-    .badge-10 { background-color: #e0e7ff; color: #3730a3; border: 1px solid #c7d2fe; }
-    .badge-8 { background-color: #fef3c7; color: #92400e; border: 1px solid #fde68a; }
+    .badge-12 { background-color: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe; }
+    .badge-10 { background-color: #eef2ff; color: #3730a3; border: 1px solid #c7d2fe; }
+    .badge-8 { background-color: #fffbeb; color: #92400e; border: 1px solid #fde68a; }
     @media print {
       header, .no-print { display: none !important; }
-      body { background: white !important; font-size: 10pt; }
+      body { background: white !important; font-size: 9pt; }
+      .card-box { page-break-inside: avoid; margin-bottom: 12px; }
     }
   </style>
 </head>
-<body class="bg-slate-50 text-slate-900 min-h-screen">
+<body class="bg-slate-50 text-slate-900 min-h-screen antialiased">
 
-  <!-- Top Header Navigation -->
-  <header class="bg-[#1B365D] text-white shadow-lg sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap items-center justify-between gap-3">
-      <div class="flex items-center space-x-3">
-        <div class="w-10 h-10 rounded-lg bg-blue-600 flex items-center justify-center font-black text-xl shadow">
+  <!-- Top Enterprise Header -->
+  <header class="bg-[#0B1E36] text-white shadow-md sticky top-0 z-50 border-b border-slate-700/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex flex-wrap items-center justify-between gap-4">
+      <div class="flex items-center space-x-3.5">
+        <div class="w-10 h-10 rounded-lg bg-blue-600 flex items-center justify-center font-bold text-white text-lg shadow-sm tracking-wider">
           BA
         </div>
         <div>
-          <div class="flex items-center gap-2">
-            <h1 class="text-lg font-bold tracking-tight leading-tight">IRC + Bank Asia Project Master</h1>
-            <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500 text-white uppercase tracking-wider">Vercel Live</span>
-          </div>
-          <p class="text-xs text-slate-300">Branch Activities (☑ Yes / ☐ No) & Date/Time Management (68 Branches | 698 Target Slots)</p>
+          <h1 class="text-base sm:text-lg font-bold tracking-tight text-white leading-tight">
+            Bank Asia & Innovative Creation Ltd. (IRC)
+          </h1>
+          <p class="text-xs text-slate-300 font-medium">
+            Branch Activities & Mystery Shopping Management Portal | 68 Branches (698 Target Slots)
+          </p>
         </div>
       </div>
 
-      <div class="flex flex-wrap items-center gap-2">
-        <a href="./data/Branch_Activities_Master_Tracking_2026.xlsx" download class="px-3 py-1.5 bg-blue-700 hover:bg-blue-600 text-white rounded-md text-xs font-semibold flex items-center gap-1.5 transition shadow" title="Download Master Excel Spreadsheet (.xlsx)">
-          <i class="fa-solid fa-file-arrow-down"></i> Master Excel
-        </a>
-        <button onclick="exportToCSV()" class="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-md text-xs font-semibold flex items-center gap-1.5 transition shadow" title="Export current state to CSV">
+      <div class="flex items-center gap-2.5">
+        <button onclick="toggleBanglaInfo()" class="px-3.5 py-1.5 bg-blue-600 hover:bg-blue-500 text-white rounded-lg text-xs font-semibold flex items-center gap-1.5 transition shadow-sm">
+          <i class="fa-solid fa-circle-info"></i>
+          <span class="bn font-semibold">প্রকল্প গাইডলাইন ও প্রশ্নোত্তর</span>
+        </button>
+        <button onclick="exportToCSV()" class="px-3.5 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg text-xs font-semibold flex items-center gap-1.5 transition shadow-sm" title="Export to CSV">
           <i class="fa-solid fa-file-csv"></i> Export CSV
         </button>
-        <button onclick="fillSampleData()" class="px-3 py-1.5 bg-amber-600 hover:bg-amber-500 text-white rounded-md text-xs font-semibold flex items-center gap-1.5 transition shadow" title="Simulate field completion">
-          <i class="fa-solid fa-wand-magic-sparkles"></i> Sample Fill
-        </button>
-        <button onclick="window.print()" class="px-3 py-1.5 bg-slate-700 hover:bg-slate-600 text-white rounded-md text-xs font-semibold flex items-center gap-1.5 transition shadow" title="Print this dashboard">
+        <button onclick="window.print()" class="px-3.5 py-1.5 bg-slate-700 hover:bg-slate-600 text-white rounded-lg text-xs font-semibold flex items-center gap-1.5 transition shadow-sm" title="Print this view">
           <i class="fa-solid fa-print"></i> Print
-        </button>
-        <button onclick="resetData()" class="px-3 py-1.5 bg-rose-700 hover:bg-rose-600 text-white rounded-md text-xs font-semibold flex items-center gap-1.5 transition shadow" title="Reset all checkboxes">
-          <i class="fa-solid fa-rotate-left"></i> Reset
         </button>
       </div>
     </div>
   </header>
+
+  <!-- BANGLA PROJECT OVERVIEW & AUDIT GUIDELINE SECTION (From .docx Specification) -->
+  <section id="bangla-info-section" class="bg-gradient-to-b from-blue-50/60 to-white border-b border-slate-200 py-6 transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between pb-4 border-b border-blue-100 gap-3">
+        <div>
+          <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-blue-100 text-blue-800 text-xs font-bold mb-1.5">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span class="bn">অফিসিয়াল ফিল্ড অডিট ও মিস্ট্রি শপিং ম্যানুয়াল</span>
+          </div>
+          <h2 class="text-xl font-bold text-slate-900 bn">
+            ব্যাংক এশিয়া মিস্ট্রি শপিং ও ব্রাঞ্চ অ্যাক্টিভিটি মূল্যায়ন নির্দেশিকা
+          </h2>
+          <p class="text-xs text-slate-600 bn mt-0.5">
+            ইনোভেটিভ ক্রিয়েশন লিমিটেড (IRC)-এর ফিল্ড অডিটর ও সমন্বয়কারীদের জন্য বিভিন্ন ব্যাংকিং প্রডাক্ট ও অ্যাকাউন্ট সংক্রান্ত প্রমিত প্রশ্নোত্তর ও অডিট গাইডলাইন
+          </p>
+        </div>
+
+        <button onclick="toggleBanglaInfo()" class="text-xs text-slate-500 hover:text-slate-800 flex items-center gap-1 bn font-semibold px-2.5 py-1 rounded border border-slate-200 bg-white shadow-sm">
+          <i class="fa-solid fa-compress text-slate-400"></i> গাইডলাইন লুকান / দেখান
+        </button>
+      </div>
+
+      <!-- Bangla Cards Grid -->
+      <div id="bangla-info-content" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4.5 mt-5">
+        
+        <!-- Card 1: Savings & Current Account -->
+        <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-4.5 flex flex-col justify-between hover:border-blue-300 transition">
+          <div>
+            <div class="flex items-center gap-2 text-blue-700 font-bold text-sm pb-2 border-b border-slate-100">
+              <i class="fa-solid fa-wallet text-base"></i>
+              <span class="bn">১. সেভিংস ও কারেন্ট অ্যাকাউন্ট নির্দেশিকা</span>
+            </div>
+            
+            <div class="mt-3 text-xs text-slate-700 space-y-2 bn leading-relaxed">
+              <p><strong>প্রয়োজনীয় কাগজপত্র:</strong> সম্পূর্ণ পূরণকৃত অ্যাকাউন্ট খোলার ফর্ম, আবেদনকারী ও নমিনির পাসপোর্ট সাইজের ছবি, জাতীয় পরিচয়পত্র (NID) / পাসপোর্ট / জন্ম নিবন্ধন, পেশা ও আয়ের উৎসের প্রমাণপত্র, ইউটিলিটি বিলের কপি এবং ১০ লাখ টাকার অধিক লেনদেনে ই-টিন (TIN) সার্টিফিকেট।</p>
+              <p><strong>প্রারম্ভিক জমা ও চার্জ:</strong> অ্যাকাউন্ট খুলতে কোনো অতিরিক্ত ফি নেই; ন্যূনতম প্রারম্ভিক জমা ৫০০ টাকা। ডেবিট কার্ড বার্ষিক ফি ৫০০ টাকা (+ভ্যাট), রিপ্লেসমেন্ট ফি ৩০০ টাকা (+ভ্যাট)।</p>
+              
+              <div class="bg-slate-50 p-2.5 rounded-lg border border-slate-200 mt-2">
+                <span class="font-bold text-slate-800 text-[11px]">বাৎসরিক মেইনটেন্যান্স ফি স্ল্যাব:</span>
+                <ul class="list-disc list-inside text-[11px] text-slate-600 mt-1 space-y-0.5">
+                  <li>গড় ব্যালেন্স ১০,০০০ টাকা পর্যন্ত: <strong>সম্পূর্ণ ফ্রি</strong></li>
+                  <li>১০,০০১ থেকে ২৫,০০০ টাকা: <strong>১০০ টাকা</strong></li>
+                  <li>২৫,০০১ থেকে ২,০০,০০০ টাকা: <strong>২০০ টাকা</strong></li>
+                  <li>২,০০,০০১ থেকে ১০,০০,০০০ টাকা: <strong>২৫০ টাকা</strong></li>
+                  <li>১০,০০,০০০ টাকার ঊর্ধ্বে: <strong>৩০০ টাকা</strong></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="mt-3 pt-2 text-[11px] text-blue-600 font-semibold bn border-t border-slate-50 flex items-center justify-between">
+            <span>চেক বই ও ডেবিট কার্ড: উভয়ই প্রদেয়</span>
+            <span>নিয়মাবলি যাচাইকৃত</span>
+          </div>
+        </div>
+
+        <!-- Card 2: Fixed Deposit (FDR) -->
+        <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-4.5 flex flex-col justify-between hover:border-blue-300 transition">
+          <div>
+            <div class="flex items-center gap-2 text-indigo-700 font-bold text-sm pb-2 border-b border-slate-100">
+              <i class="fa-solid fa-piggy-bank text-base"></i>
+              <span class="bn">২. ফিক্সড ডিপোজিট (FDR) স্কিম</span>
+            </div>
+            
+            <div class="mt-3 text-xs text-slate-700 space-y-2 bn leading-relaxed">
+              <p><strong>মেয়াদ ও স্কিম:</strong> প্রচলিত ব্যাংকিংয়ে ১ মাস থেকে ৩ বছর এবং ইসলামিক ব্যাংকিংয়ে ১ মাস থেকে ৫ বছর মেয়াদি এফডিআর স্কিম চালু রয়েছে।</p>
+              <p><strong>বিদ্যমান গ্রাহকদের সুবিধা:</strong> ব্যাংক এশিয়ায় আগে থেকে সেভিংস বা কারেন্ট অ্যাকাউন্ট থাকলে পুনরায় পুরো ফর্ম পূরণ করতে হয় না; কেবল এক পাতার সংক্ষিপ্ত এফডিআর ফর্ম পূরণ করলেই চলবে।</p>
+              
+              <div class="bg-indigo-50/50 p-2.5 rounded-lg border border-indigo-100 mt-2">
+                <span class="font-bold text-indigo-900 text-[11px]">এফডিআরের বিপরীতে ঋণ (Loan Against FDR):</span>
+                <p class="text-[11px] text-indigo-800 mt-0.5">
+                  গ্রাহক তার এফডিআর মূল্যের <strong>সর্বোচ্চ ৯০% পর্যন্ত ঋণ</strong> নিতে পারেন। ঋণের সুদের হার হবে: <strong>‘এফডিআর সুদের হার + ৩%’</strong>।
+                </p>
+              </div>
+
+              <p class="text-[11px] text-slate-500 italic mt-1">ব্যাংক এশিয়ার রেট বাজার পরিস্থিতি ও নির্ভরযোগ্য নিরাপদ সঞ্চয় পরিবেশের আলোকে নির্ধারিত হয়।</p>
+            </div>
+          </div>
+          <div class="mt-3 pt-2 text-[11px] text-indigo-600 font-semibold bn border-t border-slate-50 flex items-center justify-between">
+            <span>ঋণ সুবিধা: ৯০% পর্যন্ত</span>
+            <span>সুদ: FDR রেট + ৩%</span>
+          </div>
+        </div>
+
+        <!-- Card 3: Deposit Pension Scheme (DPS) -->
+        <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-4.5 flex flex-col justify-between hover:border-blue-300 transition">
+          <div>
+            <div class="flex items-center gap-2 text-emerald-700 font-bold text-sm pb-2 border-b border-slate-100">
+              <i class="fa-solid fa-chart-line text-base"></i>
+              <span class="bn">৩. ডিপিএস (DPS) স্কিম ও ম্যাচুরিটি</span>
+            </div>
+            
+            <div class="mt-3 text-xs text-slate-700 space-y-2 bn leading-relaxed">
+              <p><strong>মেয়াদ ও কিস্তি:</strong> মেয়াদ ৩, ৫, ৭, ১০ এবং ১২ বছর। মাসিক কিস্তির পরিমাণ <strong>৫০০ টাকা থেকে শুরু করে ২০,০০০ টাকা</strong> পর্যন্ত সুবিধাজনক কিস্তিতে জমার ব্যবস্থা রয়েছে।</p>
+              <p><strong>ঋণ সুবিধা:</strong> জমা স্থিতির সর্বোচ্চ ৯০% পর্যন্ত ঋণ সুবিধা পাওয়া যাবে (সুদের হার: এফডিআর হার + ৩%)।</p>
+              
+              <div class="bg-emerald-50/50 p-2.5 rounded-lg border border-emerald-100 mt-2">
+                <span class="font-bold text-emerald-900 text-[11px]">ম্যাচুরিটি মানচিত্র (নমুনা কিস্তি):</span>
+                <div class="grid grid-cols-2 gap-1 text-[11px] text-emerald-800 mt-1">
+                  <div>১,০০০ টাকা (৫ বছর): ৩,৭২,৩৩০ টাকা</div>
+                  <div>২,০০০ টাকা (৫ বছর): ৭,৪৪,৬৬১ টাকা</div>
+                  <div>১,০০০ টাকা (১০ বছর): ৭,৩৯,০৬৮ টাকা</div>
+                  <div>৫,০০০ টাকা (১০ বছর): ৩৬,৯৫,৩৪০ টাকা</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-3 pt-2 text-[11px] text-emerald-600 font-semibold bn border-t border-slate-50 flex items-center justify-between">
+            <span>কিস্তি: ৫০০ - ২০,০০০ টাকা</span>
+            <span>মেয়াদ: ৩ থেকে ১২ বছর</span>
+          </div>
+        </div>
+
+        <!-- Card 4: Retail Loans -->
+        <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-4.5 flex flex-col justify-between hover:border-blue-300 transition">
+          <div>
+            <div class="flex items-center gap-2 text-amber-700 font-bold text-sm pb-2 border-b border-slate-100">
+              <i class="fa-solid fa-hand-holding-dollar text-base"></i>
+              <span class="bn">৪. রিটেইল লোন সুবিধা (Personal, Home, Auto)</span>
+            </div>
+            
+            <div class="mt-3 text-xs text-slate-700 space-y-2 bn leading-relaxed">
+              <p>ব্যাংক এশিয়া গ্রাহকদের বহুমুখী চাহিদা বিবেচনায় প্রতিযোগিতামূলক সুদের হারে বিভিন্ন ঋণ সুবিধা প্রদান করে:</p>
+              
+              <div class="space-y-1.5 text-[11px] mt-2">
+                <div class="p-2 bg-slate-50 rounded border border-slate-200 flex justify-between items-center">
+                  <div><strong>পার্সোনাল লোন (Unsecured):</strong> সর্বোচ্চ ৪০ লাখ টাকা (মেয়াদ ৮ বছর)</div>
+                  <span class="font-bold text-amber-700">৯.৯৯% (টেকওভার ৮.৯৯%)</span>
+                </div>
+                <div class="p-2 bg-slate-50 rounded border border-slate-200 flex justify-between items-center">
+                  <div><strong>হোম লোন (Home Loan):</strong> সর্বোচ্চ ৪ কোটি টাকা (মেয়াদ ২৫ বছর)</div>
+                  <span class="font-bold text-amber-700">৯.৫০% (টেকওভার ৮.৫০%)</span>
+                </div>
+                <div class="p-2 bg-slate-50 rounded border border-slate-200 flex justify-between items-center">
+                  <div><strong>অটো লোন (Auto Loan):</strong> সর্বোচ্চ ৮০ লাখ টাকা (মেয়াদ ৮ বছর)</div>
+                  <span class="font-bold text-amber-700">৯.৯৯% (টেকওভার ৮.৯৯%)</span>
+                </div>
+              </div>
+              
+              <p class="text-[11px] text-slate-500 mt-1">ব্যাংক এশিয়ার দ্রুত ঋণ অনুমোদন, স্বচ্ছ প্রক্রিয়া এবং মানসম্মত কাস্টমার কেয়ার গ্রাহকদের অন্যতম প্রধান আস্থা।</p>
+            </div>
+          </div>
+          <div class="mt-3 pt-2 text-[11px] text-amber-700 font-semibold bn border-t border-slate-50 flex items-center justify-between">
+            <span>দ্রুত প্রসেসিং ও টেকওভার সুবিধা</span>
+            <span>স্বচ্ছ ঋণ প্রক্রিয়া</span>
+          </div>
+        </div>
+
+        <!-- Card 5: Credit Card -->
+        <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-4.5 flex flex-col justify-between hover:border-blue-300 transition">
+          <div>
+            <div class="flex items-center gap-2 text-purple-700 font-bold text-sm pb-2 border-b border-slate-100">
+              <i class="fa-solid fa-credit-card text-base"></i>
+              <span class="bn">৫. ক্রেডিট কার্ড (VISA Gold Card)</span>
+            </div>
+            
+            <div class="mt-3 text-xs text-slate-700 space-y-2 bn leading-relaxed">
+              <p><strong>কার্ড ধরন:</strong> ব্যাংক এশিয়া আকর্ষণীয় অফারসহ ভিসা গোল্ড কার্ড অফার করে।</p>
+              <p><strong>ন্যূনতম মাসিক বেতন প্রয়োজনীয়তা:</strong> বেতনভোগী চাকরিজীবীদের ক্ষেত্রে ন্যূনতম ৩০,০০০ টাকা এবং আরএমজি ও স্বনির্ভর পেশাজীবীদের জন্য ন্যূনতম ৪০,০০০ টাকা।</p>
+              <p><strong>বার্ষিক ফি:</strong> বাৎসরিক ফি ২,৫০০ টাকা। বছরে নির্দিষ্ট সংখ্যক POS লেনদেনের শর্ত পূরণ সাপেক্ষে বার্ষিক ফি ওয়েভ (মওকুফ) করা হয়।</p>
+              <p><strong>নিরাপত্তা ও সুবিধা:</strong> আধুনিক ফ্রড মনিটরিং, ২৪/৭ সার্বক্ষণিক কাস্টমার কেয়ার, মার্চেন্ট ডিসকাউন্ট এবং রিওয়ার্ড পয়েন্ট সুবিধা বিদ্যমান (ভিসা গোল্ডে লাউঞ্জ অ্যাক্সেস প্রযোজ্য নয়)।</p>
+            </div>
+          </div>
+          <div class="mt-3 pt-2 text-[11px] text-purple-700 font-semibold bn border-t border-slate-50 flex items-center justify-between">
+            <span>ন্যূনতম বেতন: ৩০,০০০ টাকা</span>
+            <span>ফি ওয়েভ সুবিধা বিদ্যমান</span>
+          </div>
+        </div>
+
+        <!-- Card 6: Islamic Banking Window -->
+        <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-4.5 flex flex-col justify-between hover:border-blue-300 transition">
+          <div>
+            <div class="flex items-center gap-2 text-teal-700 font-bold text-sm pb-2 border-b border-slate-100">
+              <i class="fa-solid fa-mosque text-base"></i>
+              <span class="bn">৬. ইসলামিক ব্যাংকিং উইন্ডো</span>
+            </div>
+            
+            <div class="mt-3 text-xs text-slate-700 space-y-2 bn leading-relaxed">
+              <p><strong>ইসলামিক সঞ্চয় স্কিম:</strong> মুদারাবা হজ সঞ্চয় স্কিম (MHSS) এবং মুদারাবা ডিপোজিট পেনশন স্কিম (MDPS)।</p>
+              <p><strong>প্রয়োজনীয় ডকুমেন্টস:</strong> আবেদনকারীর ছবি, NID/পাসপোর্ট কপি, নমিনির সত্যায়িত ছবি ও NID, পূরণকৃত ফর্ম, আয়ের উৎস এবং ইউটিলিটি বিলের কপি।</p>
+              <p><strong>করজে হাসানা / লোন সুবিধা:</strong> মুদারাবা টার্ম ডিপোজিটের বিপরীতে ৮০% পর্যন্ত কিউ-অর্ড (ঋণ) সুবিধা (ন্যূনতম মূলধন ১ লাখ টাকা সাপেক্ষে)। এ ক্ষেত্রে গৃহীত ঋণ অংশের ওপর কোনো মুনাফা প্রযোজ্য হবে না।</p>
+              <p>ইসলামিক অর্থায়নে স্বচ্ছ শরিয়াহ বোর্ড তত্ত্বাবধান ও শরিয়াহ সম্মত প্রফিট শেয়ারিং নিশ্চিত করা হয়।</p>
+            </div>
+          </div>
+          <div class="mt-3 pt-2 text-[11px] text-teal-700 font-semibold bn border-t border-slate-50 flex items-center justify-between">
+            <span>মুদারাবা হজ ও ডিপিএস স্কিম</span>
+            <span>শরিয়াহসম্মত করজে হাসানা</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
 
   <!-- Live KPI Metrics Ribbon -->
   <div class="bg-white border-b border-slate-200 shadow-sm no-print">
@@ -72,7 +264,7 @@
         <div class="bg-slate-50 p-3 rounded-lg border border-slate-200">
           <div class="text-[11px] font-semibold text-slate-500 uppercase tracking-wider">Total Branches</div>
           <div class="text-2xl font-bold text-slate-800 mt-1" id="kpi-branches">68</div>
-          <div class="text-[10px] text-slate-400">3 Regional Zones</div>
+          <div class="text-[10px] text-slate-400">Chittagong, Dhaka N, East</div>
         </div>
 
         <div class="bg-slate-50 p-3 rounded-lg border border-slate-200">
@@ -82,15 +274,15 @@
         </div>
 
         <div class="bg-emerald-50 p-3 rounded-lg border border-emerald-200">
-          <div class="text-[11px] font-semibold text-emerald-700 uppercase tracking-wider">Done (☑ Yes)</div>
+          <div class="text-[11px] font-semibold text-emerald-700 uppercase tracking-wider">Completed (☑ Yes)</div>
           <div class="text-2xl font-bold text-emerald-700 mt-1" id="kpi-done">0</div>
-          <div class="text-[10px] text-emerald-600" id="kpi-done-sub">0.0% Complete</div>
+          <div class="text-[10px] text-emerald-600 font-medium" id="kpi-done-sub">0.0% Complete</div>
         </div>
 
         <div class="bg-rose-50 p-3 rounded-lg border border-rose-200">
           <div class="text-[11px] font-semibold text-rose-700 uppercase tracking-wider">Pending (☐ No)</div>
           <div class="text-2xl font-bold text-rose-700 mt-1" id="kpi-pending">698</div>
-          <div class="text-[10px] text-rose-600">Awaiting Field Visit</div>
+          <div class="text-[10px] text-rose-600">Awaiting Visit</div>
         </div>
 
         <div class="bg-blue-50 p-3 rounded-lg border border-blue-200">
@@ -101,10 +293,10 @@
           </div>
         </div>
 
-        <div class="bg-indigo-50 p-3 rounded-lg border border-indigo-200">
-          <div class="text-[11px] font-semibold text-indigo-700 uppercase tracking-wider">A/C Holders</div>
-          <div class="text-2xl font-bold text-indigo-800 mt-1">23 / 68</div>
-          <div class="text-[10px] text-indigo-600">45 CTG & East Pending</div>
+        <div class="bg-slate-50 p-3 rounded-lg border border-slate-200">
+          <div class="text-[11px] font-semibold text-slate-500 uppercase tracking-wider">A/C Holders Ready</div>
+          <div class="text-2xl font-bold text-slate-800 mt-1">23 / 68</div>
+          <div class="text-[10px] text-slate-500">Dhaka North Assigned</div>
         </div>
 
       </div>
@@ -120,13 +312,13 @@
         <div class="relative w-full md:w-80">
           <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
           <input type="text" id="search-input" onkeyup="applyFilters()" placeholder="Search branch, district, contact, code..."
-            class="w-full pl-9 pr-4 py-2 text-sm border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+            class="w-full pl-9 pr-4 py-2 text-sm border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 shadow-sm">
         </div>
 
-        <!-- Filter Tags -->
+        <!-- Filter Controls -->
         <div class="flex flex-wrap gap-2 w-full md:w-auto">
           <!-- Region -->
-          <div class="flex rounded-lg border border-slate-200 overflow-hidden text-xs">
+          <div class="flex rounded-lg border border-slate-200 overflow-hidden text-xs shadow-sm">
             <button onclick="setRegionFilter('ALL')" id="rf-ALL" class="px-3 py-1.5 font-semibold bg-blue-600 text-white">All (68)</button>
             <button onclick="setRegionFilter('Chittagong')" id="rf-Chittagong" class="px-3 py-1.5 font-semibold bg-white text-slate-700 hover:bg-slate-50">CTG (20)</button>
             <button onclick="setRegionFilter('Dhaka North')" id="rf-Dhaka-North" class="px-3 py-1.5 font-semibold bg-white text-slate-700 hover:bg-slate-50">Dhaka N (23)</button>
@@ -134,7 +326,7 @@
           </div>
 
           <!-- Activity Tier -->
-          <div class="flex rounded-lg border border-slate-200 overflow-hidden text-xs">
+          <div class="flex rounded-lg border border-slate-200 overflow-hidden text-xs shadow-sm">
             <button onclick="setTierFilter('ALL')" id="tf-ALL" class="px-3 py-1.5 font-semibold bg-slate-800 text-white">All Tiers</button>
             <button onclick="setTierFilter(12)" id="tf-12" class="px-3 py-1.5 font-semibold bg-white text-slate-700 hover:bg-slate-50">12-Act (29)</button>
             <button onclick="setTierFilter(10)" id="tf-10" class="px-3 py-1.5 font-semibold bg-white text-slate-700 hover:bg-slate-50">10-Act (19)</button>
@@ -142,7 +334,7 @@
           </div>
 
           <!-- View Toggle -->
-          <div class="flex rounded-lg border border-slate-200 overflow-hidden text-xs">
+          <div class="flex rounded-lg border border-slate-200 overflow-hidden text-xs shadow-sm">
             <button onclick="setViewMode('cards')" id="vm-cards" class="px-3 py-1.5 font-semibold bg-blue-600 text-white"><i class="fa-solid fa-table-cells-large mr-1"></i> Cards</button>
             <button onclick="setViewMode('table')" id="vm-table" class="px-3 py-1.5 font-semibold bg-white text-slate-700 hover:bg-slate-50"><i class="fa-solid fa-table mr-1"></i> Matrix</button>
           </div>
@@ -151,12 +343,12 @@
       </div>
 
       <!-- Quick status indicator -->
-      <div class="mt-3 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
-        <span id="filtered-count-text">Showing 68 of 68 branches</span>
+      <div class="mt-3 pt-3 border-t border-slate-100 flex flex-wrap items-center justify-between text-xs text-slate-500 gap-2">
+        <span id="filtered-count-text" class="font-medium text-slate-600">Showing 68 of 68 branches</span>
         <div class="flex items-center gap-4">
-          <span class="flex items-center gap-1"><span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span> ☑ Yes = Completed</span>
-          <span class="flex items-center gap-1"><span class="w-3 h-3 rounded-full bg-rose-400 inline-block"></span> ☐ No = Pending</span>
-          <span class="flex items-center gap-1"><span class="w-3 h-3 rounded bg-slate-300 inline-block"></span> N/A = Locked for Tier</span>
+          <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-emerald-500 inline-block"></span> <strong>Yes</strong> = Completed Activity</span>
+          <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-rose-500 inline-block"></span> <strong>No</strong> = Pending Activity</span>
+          <span class="flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-slate-300 inline-block"></span> <strong>N/A</strong> = Not Applicable for Tier</span>
         </div>
       </div>
     </div>
@@ -177,7 +369,7 @@
             <th class="py-3 px-3 border border-slate-200">Target</th>
             <th class="py-3 px-3 border border-slate-200">Done</th>
             <th class="py-3 px-3 border border-slate-200">Prog %</th>
-            <!-- 12 Activities -->
+            <!-- 12 Activities Header -->
             <th colspan="3" class="py-2 px-2 text-center bg-teal-50 border border-slate-200">Act 01</th>
             <th colspan="3" class="py-2 px-2 text-center bg-teal-50 border border-slate-200">Act 02</th>
             <th colspan="3" class="py-2 px-2 text-center bg-teal-50 border border-slate-200">Act 03</th>
@@ -193,18 +385,18 @@
           </tr>
           <tr class="bg-slate-50 text-[10px] text-slate-500">
             <th colspan="8" class="border border-slate-200"></th>
-            <th class="py-1 px-1 border border-slate-200 text-center">☑/☐</th><th class="py-1 px-1 border border-slate-200 text-center">Date</th><th class="py-1 px-1 border border-slate-200 text-center">Time</th>
-            <th class="py-1 px-1 border border-slate-200 text-center">☑/☐</th><th class="py-1 px-1 border border-slate-200 text-center">Date</th><th class="py-1 px-1 border border-slate-200 text-center">Time</th>
-            <th class="py-1 px-1 border border-slate-200 text-center">☑/☐</th><th class="py-1 px-1 border border-slate-200 text-center">Date</th><th class="py-1 px-1 border border-slate-200 text-center">Time</th>
-            <th class="py-1 px-1 border border-slate-200 text-center">☑/☐</th><th class="py-1 px-1 border border-slate-200 text-center">Date</th><th class="py-1 px-1 border border-slate-200 text-center">Time</th>
-            <th class="py-1 px-1 border border-slate-200 text-center">☑/☐</th><th class="py-1 px-1 border border-slate-200 text-center">Date</th><th class="py-1 px-1 border border-slate-200 text-center">Time</th>
-            <th class="py-1 px-1 border border-slate-200 text-center">☑/☐</th><th class="py-1 px-1 border border-slate-200 text-center">Date</th><th class="py-1 px-1 border border-slate-200 text-center">Time</th>
-            <th class="py-1 px-1 border border-slate-200 text-center">☑/☐</th><th class="py-1 px-1 border border-slate-200 text-center">Date</th><th class="py-1 px-1 border border-slate-200 text-center">Time</th>
-            <th class="py-1 px-1 border border-slate-200 text-center">☑/☐</th><th class="py-1 px-1 border border-slate-200 text-center">Date</th><th class="py-1 px-1 border border-slate-200 text-center">Time</th>
-            <th class="py-1 px-1 border border-slate-200 text-center">☑/☐</th><th class="py-1 px-1 border border-slate-200 text-center">Date</th><th class="py-1 px-1 border border-slate-200 text-center">Time</th>
-            <th class="py-1 px-1 border border-slate-200 text-center">☑/☐</th><th class="py-1 px-1 border border-slate-200 text-center">Date</th><th class="py-1 px-1 border border-slate-200 text-center">Time</th>
-            <th class="py-1 px-1 border border-slate-200 text-center">☑/☐</th><th class="py-1 px-1 border border-slate-200 text-center">Date</th><th class="py-1 px-1 border border-slate-200 text-center">Time</th>
-            <th class="py-1 px-1 border border-slate-200 text-center">☑/☐</th><th class="py-1 px-1 border border-slate-200 text-center">Date</th><th class="py-1 px-1 border border-slate-200 text-center">Time</th>
+            <th class="py-1 px-1 border border-slate-200 text-center">Status</th><th class="py-1 px-1 border border-slate-200 text-center">Date</th><th class="py-1 px-1 border border-slate-200 text-center">Time</th>
+            <th class="py-1 px-1 border border-slate-200 text-center">Status</th><th class="py-1 px-1 border border-slate-200 text-center">Date</th><th class="py-1 px-1 border border-slate-200 text-center">Time</th>
+            <th class="py-1 px-1 border border-slate-200 text-center">Status</th><th class="py-1 px-1 border border-slate-200 text-center">Date</th><th class="py-1 px-1 border border-slate-200 text-center">Time</th>
+            <th class="py-1 px-1 border border-slate-200 text-center">Status</th><th class="py-1 px-1 border border-slate-200 text-center">Date</th><th class="py-1 px-1 border border-slate-200 text-center">Time</th>
+            <th class="py-1 px-1 border border-slate-200 text-center">Status</th><th class="py-1 px-1 border border-slate-200 text-center">Date</th><th class="py-1 px-1 border border-slate-200 text-center">Time</th>
+            <th class="py-1 px-1 border border-slate-200 text-center">Status</th><th class="py-1 px-1 border border-slate-200 text-center">Date</th><th class="py-1 px-1 border border-slate-200 text-center">Time</th>
+            <th class="py-1 px-1 border border-slate-200 text-center">Status</th><th class="py-1 px-1 border border-slate-200 text-center">Date</th><th class="py-1 px-1 border border-slate-200 text-center">Time</th>
+            <th class="py-1 px-1 border border-slate-200 text-center">Status</th><th class="py-1 px-1 border border-slate-200 text-center">Date</th><th class="py-1 px-1 border border-slate-200 text-center">Time</th>
+            <th class="py-1 px-1 border border-slate-200 text-center">Status</th><th class="py-1 px-1 border border-slate-200 text-center">Date</th><th class="py-1 px-1 border border-slate-200 text-center">Time</th>
+            <th class="py-1 px-1 border border-slate-200 text-center">Status</th><th class="py-1 px-1 border border-slate-200 text-center">Date</th><th class="py-1 px-1 border border-slate-200 text-center">Time</th>
+            <th class="py-1 px-1 border border-slate-200 text-center">Status</th><th class="py-1 px-1 border border-slate-200 text-center">Date</th><th class="py-1 px-1 border border-slate-200 text-center">Time</th>
+            <th class="py-1 px-1 border border-slate-200 text-center">Status</th><th class="py-1 px-1 border border-slate-200 text-center">Date</th><th class="py-1 px-1 border border-slate-200 text-center">Time</th>
           </tr>
         </thead>
         <tbody id="matrix-tbody"></tbody>
@@ -227,6 +419,15 @@
     let currentTier = 'ALL';
     let currentView = 'cards';
     let searchTerm = '';
+
+    function toggleBanglaInfo() {
+      const sec = document.getElementById('bangla-info-content');
+      if (sec.classList.contains('hidden')) {
+        sec.classList.remove('hidden');
+      } else {
+        sec.classList.add('hidden');
+      }
+    }
 
     function saveState() {
       localStorage.setItem("irc_ba_branch_tracker_data", JSON.stringify(branches));
@@ -327,7 +528,7 @@
       document.getElementById('kpi-branches').innerText = branches.length;
       document.getElementById('kpi-target').innerText = totalTarget;
       document.getElementById('kpi-done').innerText = totalDone;
-      document.getElementById('kpi-done-sub').innerText = pct + '% Complete';
+      document.getElementById('kpi-done-sub').innerText = pct + '% Completed';
       document.getElementById('kpi-pending').innerText = pending;
       document.getElementById('kpi-progress').innerText = pct + '%';
       document.getElementById('kpi-bar').style.width = pct + '%';
@@ -348,7 +549,7 @@
     function renderCards(filtered) {
       const container = document.getElementById('cards-container');
       if (filtered.length === 0) {
-        container.innerHTML = `<div class="p-8 text-center text-slate-400 bg-white rounded-xl border border-slate-200">No branches match your current filters.</div>`;
+        container.innerHTML = `<div class="p-8 text-center text-slate-400 bg-white rounded-xl border border-slate-200">No branches match your current search or filter criteria.</div>`;
         return;
       }
 
@@ -360,53 +561,60 @@
         const actsHtml = b.activities.map(a => {
           if (!a.active) {
             return `
-              <div class="slot-na p-2.5 rounded-lg border text-center flex flex-col justify-between">
+              <div class="slot-na p-2.5 rounded-lg border text-center flex flex-col justify-between select-none">
                 <div class="text-[10px] font-bold text-slate-400">Act ${String(a.num).padStart(2, '0')}</div>
-                <div class="text-[11px] font-semibold my-1">N/A</div>
-                <div class="text-[9px] text-slate-400">Locked</div>
+                <div class="text-xs font-semibold my-1 text-slate-400 flex items-center justify-center gap-1">
+                  <i class="fa-solid fa-lock text-[10px]"></i> N/A
+                </div>
+                <div class="text-[9px] text-slate-400">Locked for Tier</div>
               </div>
             `;
           }
 
           const slotClass = a.done ? 'slot-done shadow-sm' : 'slot-pending';
-          const btnClass = a.done ? 'bg-emerald-600 hover:bg-emerald-700 text-white' : 'bg-slate-100 hover:bg-slate-200 text-slate-700';
+          const btnClass = a.done 
+            ? 'bg-emerald-600 hover:bg-emerald-700 text-white shadow-sm' 
+            : 'bg-white hover:bg-rose-50 text-rose-600 border border-rose-200';
 
           return `
             <div class="${slotClass} p-2.5 rounded-lg border flex flex-col justify-between transition-all">
               <div class="flex items-center justify-between">
                 <span class="text-[10px] font-bold text-slate-500">Act ${String(a.num).padStart(2, '0')}</span>
-                <span class="text-[9px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-500 font-medium">${a.round}</span>
+                <span class="text-[9px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 font-semibold">${a.round}</span>
               </div>
               <div class="text-[11px] font-semibold text-slate-800 line-clamp-1 my-1" title="${a.name}">${a.name}</div>
               
-              <button onclick="toggleActivity(${b.sl}, ${a.num})" class="w-full py-1 px-2 rounded text-xs font-bold flex items-center justify-center gap-1.5 ${btnClass} transition">
-                <i class="fa-solid ${a.done ? 'fa-square-check' : 'fa-square'}"></i>
+              <!-- Checkbox Button -->
+              <button onclick="toggleActivity(${b.sl}, ${a.num})" class="w-full py-1.5 px-2 rounded-md text-xs font-bold flex items-center justify-center gap-1.5 ${btnClass} transition">
+                <i class="fa-solid ${a.done ? 'fa-square-check text-white' : 'fa-square text-rose-400'}"></i>
                 <span>${a.done ? 'Yes' : 'No'}</span>
               </button>
 
+              <!-- Individual Date and Time -->
               <div class="mt-2 space-y-1">
                 <input type="date" value="${a.date || ''}" onchange="updateActDate(${b.sl}, ${a.num}, this.value)"
-                  class="w-full text-[10px] px-1.5 py-0.5 border border-slate-200 rounded focus:outline-none focus:ring-1 focus:ring-blue-500 bg-white" title="Activity Date">
+                  class="w-full text-[10px] px-1.5 py-1 border border-slate-200 rounded focus:outline-none focus:ring-1 focus:ring-blue-500 bg-white" title="Activity Date">
                 <input type="time" value="${a.time || ''}" onchange="updateActTime(${b.sl}, ${a.num}, this.value)"
-                  class="w-full text-[10px] px-1.5 py-0.5 border border-slate-200 rounded focus:outline-none focus:ring-1 focus:ring-blue-500 bg-white" title="Activity Time">
+                  class="w-full text-[10px] px-1.5 py-1 border border-slate-200 rounded focus:outline-none focus:ring-1 focus:ring-blue-500 bg-white" title="Activity Time">
               </div>
             </div>
           `;
         }).join('');
 
         return `
-          <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-5 hover:border-slate-300 transition">
+          <div class="card-box bg-white rounded-xl shadow-sm border border-slate-200 p-5 hover:border-slate-300 transition">
+            <!-- Branch Top Summary -->
             <div class="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-slate-100">
               <div class="flex items-center gap-3">
-                <span class="px-2.5 py-1 rounded bg-[#1B365D] text-white text-xs font-bold">${b.code}</span>
+                <span class="px-2.5 py-1 rounded bg-[#0B1E36] text-white text-xs font-bold tracking-wide">${b.code}</span>
                 <div>
                   <h3 class="font-bold text-slate-900 text-base leading-tight">${b.name}</h3>
-                  <div class="text-xs text-slate-500 flex items-center gap-2 mt-0.5">
+                  <div class="text-xs text-slate-500 flex flex-wrap items-center gap-2 mt-0.5">
                     <span><i class="fa-solid fa-location-dot text-slate-400 mr-1"></i>${b.district}, ${b.region}</span>
                     <span>•</span>
-                    <span><i class="fa-solid fa-user text-slate-400 mr-1"></i>A/C Holder: <strong>${b.ac_holder || 'Unassigned'}</strong></span>
+                    <span><i class="fa-solid fa-user-check text-slate-400 mr-1"></i>A/C Holder: <strong>${b.ac_holder || 'Unassigned'}</strong></span>
                     <span>•</span>
-                    <span>Contact: <strong>${b.contact || 'Unassigned'}</strong></span>
+                    <span><i class="fa-solid fa-phone text-slate-400 mr-1"></i>Contact: <strong>${b.contact || 'Unassigned'}</strong></span>
                   </div>
                 </div>
               </div>
@@ -422,6 +630,7 @@
               </div>
             </div>
 
+            <!-- Activities Grid -->
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2.5 mt-4">
               ${actsHtml}
             </div>
@@ -440,11 +649,13 @@
           if (!a.active) {
             return `<td class="py-1 px-1 bg-slate-100 text-slate-400 text-center border border-slate-200">N/A</td><td class="py-1 px-1 bg-slate-100 text-slate-400 text-center border border-slate-200">-</td><td class="py-1 px-1 bg-slate-100 text-slate-400 text-center border border-slate-200">-</td>`;
           }
-          const stBadge = a.done ? '<span class="px-1.5 py-0.5 bg-emerald-100 text-emerald-800 rounded font-bold">Yes</span>' : '<span class="px-1.5 py-0.5 bg-rose-100 text-rose-800 rounded font-semibold">No</span>';
+          const stBadge = a.done 
+            ? '<span class="px-2 py-0.5 bg-emerald-600 text-white rounded font-bold text-[10px]">Yes</span>' 
+            : '<span class="px-2 py-0.5 bg-rose-50 text-rose-600 border border-rose-200 rounded font-bold text-[10px]">No</span>';
           return `
             <td class="py-1 px-1 text-center border border-slate-200 cursor-pointer" onclick="toggleActivity(${b.sl}, ${a.num})">${stBadge}</td>
-            <td class="py-1 px-1 text-center border border-slate-200"><input type="date" value="${a.date||''}" onchange="updateActDate(${b.sl}, ${a.num}, this.value)" class="w-24 text-[10px] border border-slate-200 rounded px-1"></td>
-            <td class="py-1 px-1 text-center border border-slate-200"><input type="time" value="${a.time||''}" onchange="updateActTime(${b.sl}, ${a.num}, this.value)" class="w-16 text-[10px] border border-slate-200 rounded px-1"></td>
+            <td class="py-1 px-1 text-center border border-slate-200"><input type="date" value="${a.date||''}" onchange="updateActDate(${b.sl}, ${a.num}, this.value)" class="w-24 text-[10px] border border-slate-200 rounded px-1 py-0.5"></td>
+            <td class="py-1 px-1 text-center border border-slate-200"><input type="time" value="${a.time||''}" onchange="updateActTime(${b.sl}, ${a.num}, this.value)" class="w-16 text-[10px] border border-slate-200 rounded px-1 py-0.5"></td>
           `;
         }).join('');
 
@@ -475,31 +686,6 @@
       updateGlobalKPIs();
     }
 
-    function resetData() {
-      if (confirm("Reset all activity checkboxes and dates to default?")) {
-        localStorage.removeItem("irc_ba_branch_tracker_data");
-        branches = JSON.parse(JSON.stringify(INITIAL_BRANCHES));
-        saveState();
-        render();
-      }
-    }
-
-    function fillSampleData() {
-      branches.forEach(b => {
-        if (b.region === 'Dhaka North') {
-          b.activities.forEach((a, idx) => {
-            if (a.active && idx < 4) {
-              a.done = true;
-              a.date = '2026-11-04';
-              a.time = '10:30';
-            }
-          });
-        }
-      });
-      saveState();
-      render();
-    }
-
     function exportToCSV() {
       let csv = "Branch Code,Sl,Branch Name,Region,Division,District,A/C Holder,Contact Person,Target Activities,Done Activities,Pending Activities,Completion %";
       for (let i = 1; i <= 12; i++) {
@@ -528,7 +714,7 @@
       const url = URL.createObjectURL(blob);
       const link = document.createElement("a");
       link.setAttribute("href", url);
-      link.setAttribute("download", `IRC_Bank_Asia_Activity_Tracker_${new Date().toISOString().split('T')[0]}.csv`);
+      link.setAttribute("download", `IRC_Bank_Asia_Branch_Tracker_${new Date().toISOString().split('T')[0]}.csv`);
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
