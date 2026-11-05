@@ -1,97 +1,51 @@
-# 🏦 Bank Asia Branch Activity & Mystery Shopping Tracker (Interactive Web App)
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fmonourhosan%2FBranch_Activity_Tracker_Interactive)
-![Status](https://img.shields.io/badge/Status-Production%20Ready-emerald)
-![Platform](https://img.shields.io/badge/Platform-Vercel%20%7C%20GitHub-blue)
-![Scope](https://img.shields.io/badge/Scope-68%20Branches%20%7C%20698%20Activities-purple)
-
-> **Client / Organization:** Innovative Creation Ltd. (IRC) & Bank Asia  
-> **Project Scope:** Mystery Shopping & Branch Compliance Field Activities (68 Branches nationwide across Chittagong, Dhaka North, and East regions)  
-> **Target Activities:** 698 Active Slots (29×12 + 19×10 + 20×8)
+# 🏦 ব্যাংকিং খাতে মিস্ট্রি শপিং ও সার্ভে মানোন্নয়নে IRC-এর ভূমিকা
+### Mystery Shopping in Banking & How IRC Enhances Bank Survey Quality & Standards
 
 ---
 
-## 🚀 Live Demo on Vercel
+## 🔍 মিস্ট্রি শপিং (Mystery Shopping) কী?
 
-You can deploy and run this repository live on Vercel with zero configuration:
-1. Click the **[Deploy with Vercel](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fmonourhosan%2FBranch_Activity_Tracker_Interactive)** button above.
-2. Or go to [vercel.com](https://vercel.com), click **"Add New Project"**, select `Branch_Activity_Tracker_Interactive`, and click **Deploy**.
-3. Vercel automatically deploys `index.html` and gives you an instant live URL (e.g., `https://branch-activity-tracker-interactive.vercel.app`).
+**মিস্ট্রি শপিং (Mystery Shopping)** হলো একটি প্রাতিষ্ঠানিক, পদ্ধতিগত ও বৈজ্ঞানিক গবেষণা কৌশল—যার মাধ্যমে নিরপেক্ষ ও পেশাদার গবেষক বা অডিটররা সাধারণ গ্রাহকের ছদ্মবেশে কোনো প্রতিষ্ঠানের (যেমন: ব্যাংকের শাখা, এটিএম বুথ বা ডিজিটাল হেল্পডেস্ক) বিভিন্ন সেবা গ্রহণ করেন এবং সেবার প্রতিটি স্তরের গুণমান, কার্যকারিতা ও আচরণ পুঙ্খানুপুঙ্খভাবে পর্যবেক্ষণ ও মূল্যায়ন করেন।
 
----
-
-## ✨ Key Features
-
-- **Individual Branch Activity Management:**
-  - **8-Activity Branches (20 branches):** Activities 01–08 active; 09–12 locked as `N/A`.
-  - **10-Activity Branches (19 branches):** Activities 01–10 active; 11–12 locked as `N/A`.
-  - **12-Activity Branches (29 branches):** All 12 activities fully active.
-- **Interactive Checkboxes (☑ Yes / ☐ No):** Click any activity slot to toggle status instantly with soft green / coral status styling.
-- **Individual Date & Time Pickers:** Native HTML5 Date (`YYYY-MM-DD`) and Time (`HH:MM`) pickers for every single activity slot.
-- **Auto-Timestamp:** Clicking a pending activity automatically pre-populates today's date and current time if blank!
-- **Real-Time KPI Dashboard:** Instant progress percentage, completed count, and pending count calculated live at both the branch card and overall project level.
-- **Dual View Modes:**
-  - **Cards View:** Clean card layout showing branch details, coordinator, and activity grid.
-  - **Matrix Table View:** Spreadsheet-style matrix displaying all 36 activity sub-columns.
-- **Instant Search & Filter:** Filter by region (*Chittagong*, *Dhaka North*, *East*), activity tier (*8-Act*, *10-Act*, *12-Act*), or search by name, code, district, or coordinator.
-- **Data Persistence:** Automatically saves your updates to browser `localStorage` so data is never lost on refresh.
-- **One-Click Export:** Export current live progress to clean CSV anytime.
-- **Downloadable Master Excel:** Includes direct download link to [`Branch_Activities_Master_Tracking_2026.xlsx`](./data/Branch_Activities_Master_Tracking_2026.xlsx) with 9 automated sheets, formulas, and data validations.
+### প্রথাগত অডিটের সাথে মিস্ট্রি শপিংয়ের পার্থক্য:
+- **প্রথাগত ইন্টারনাল অডিটে** শাখা কর্তৃপক্ষ আগেই অবগত থাকে এবং নথিপত্র প্রস্তুত রাখে, যার ফলে গ্রাহকদের প্রতিদিনের বাস্তব অভিজ্ঞতা ও সেবার আসল চিত্র পুরোপুরি উঠে আসে না।
+- **মিস্ট্রি শপিংয়ে** কোনো ধরনের পূর্বঘোষণা থাকে না। অডিটররা মাঠপর্যায়ে প্রত্যক্ষভাবে সেবা গ্রহণ করেন (যেমন: অ্যাকাউন্ট খোলা, ক্যাশ জমা/উত্তোলন, চেক বই লেনদেন, লোন তথ্য অনুসন্ধান বা অভিযোগ নিষ্পত্তি)। এর ফলে কর্মকর্তা-কর্মচারীদের স্বাভাবিক আচরণ, প্রতিক্রিয়া, সেবা প্রদানের প্রকৃত সময় এবং প্রাতিষ্ঠানিক নিয়মানুবর্তিতার ১০০% বাস্তব চিত্র উন্মোচিত হয়।
 
 ---
 
-## 📂 Repository File Structure
+## 🚀 কীভাবে IRC (Innovative Research & Consultancy Ltd.) মিস্ট্রি শপিংয়ের মাধ্যমে ব্যাংক সার্ভের গুণমান ও নির্ভরযোগ্যতা বৃদ্ধি করে?
 
-```
-Branch_Activity_Tracker_Interactive/
-├── index.html                                   # Primary Vercel entrypoint (HTML5 interactive web app)
-├── Branch_Activity_Tracker_Interactive.html     # Mirror entrypoint for backward compatibility
-├── vercel.json                                  # Vercel deployment routes, rewrites & headers
-├── package.json                                 # Project metadata and serve scripts
-├── .gitignore                                   # Ignore list for deployment builds
-├── README.md                                    # Documentation and Vercel deploy badge
-└── data/
-    ├── Branch_Activities_Master_Tracking_2026.xlsx  # Official 9-sheet Master Excel Workbook
-    └── Branch list_25th Oct'2026.xlsx               # Original source dataset
-```
+ব্যাংকিং সেক্টরে নির্ভুল গবেষণা, গ্রাহক সন্তুষ্টি পরিমাপ এবং কমপ্লায়েন্স নিশ্চিতে **Innovative Research & Consultancy Ltd. (IRC)** আধুনিক পদ্ধতি ও সুনির্দিষ্ট মেট্রিক্স প্রয়োগ করে ব্যাংক সার্ভের মান বহুগুণে বৃদ্ধি করে:
 
----
+### ১. শতভাগ নিরপেক্ষ ও বাস্তব চিত্র উন্মোচন (100% Unbiased Ground-Truth Data)
+প্রচলিত গ্রাহক মতামত জরিপে অনেক সময় গ্রাহকের ব্যক্তিগত পক্ষপাতিত্ব বা অসম্পূর্ণ তথ্য থাকে। IRC-এর সুপ্রশিক্ষিত ফিল্ড অডিটররা প্রমিত স্কোরকার্ড ও আন্তর্জাতিক মানের গাইডলাইন অনুসরণ করে মাঠপর্যায় থেকে প্রমাণভিত্তিক (Voucher, SMS, টাইমস্ট্যাম্প ও অডিও-ভিজ্যুয়াল প্রুফ) ডেটা সংগ্রহ করে, যা সার্ভের ফলাফলের গ্রহণযোগ্যতা সর্বোচ্চ পর্যায়ে উন্নীত করে।
 
-## 🛠️ Deploying to Vercel Step-by-Step
+### ২. কর্মীদের পেশাদারিত্ব, আচরণ ও সেবার গতি পরিমাপ (Turnaround Time - TAT)
+কাউন্টারে গ্রাহক দাঁড়ানোর পর থেকে সেবা শেষ হওয়া পর্যন্ত প্রতিটি ধাপের সময় (Start Time, End Time, Duration) সেকেন্ড-টু-সেকেন্ড ট্র্যাক করা হয়। একই সাথে কর্মকর্তাদের আচরণ কতটা আন্তরিক, তথ্য প্রদানের ক্ষেত্রে তারা কতটা সুস্পষ্ট এবং গ্রাহককে সঠিক দিকনির্দেশনা দিচ্ছেন কিনা—তা নির্ভুলভাবে পরিমাপ করা হয়।
 
-### Method 1: Using the Vercel Web Dashboard (Recommended)
-1. Sign in to [Vercel](https://vercel.com).
-2. Click **Add New...** &rarr; **Project**.
-3. Import your GitHub repository: `monourhosan/Branch_Activity_Tracker_Interactive`.
-4. Framework Preset: **Other** (Root Directory: `./`).
-5. Click **Deploy**. Vercel will complete deployment in ~10 seconds!
+### ৩. নিয়ন্ত্রক নীতিমালা ও কমপ্লায়েন্স (KYC / AML / SOP) বাস্তবায়ন যাচাই
+বাংলাদেশ ব্যাংক এবং ব্যাংকের নিজস্ব পরিচালন নীতিমালা (SOP) অনুযায়ী গ্রাহকের পরিচয় যাচাই (KYC), প্রয়োজনীয় ডকুমেন্টস পরীক্ষণ, ফি ও চার্জের স্বচ্ছতা এবং গোপনীয়তা রক্ষা করা হচ্ছে কিনা—তা কোনো ব্যত্যয় ছাড়াই মূল্যায়ন করে IRC।
 
-### Method 2: Using Vercel CLI
-```bash
-# Install Vercel CLI (if not already installed)
-npm install -g vercel
+### ৪. শাখাভিত্তিক ও অঞ্চলভেদে সেবার ঘাটতি চিহ্নিতকরণ (Service Gap Analysis)
+IRC-এর মেথডোলজির মাধ্যমে শহর, উপশহর ও প্রত্যন্ত অঞ্চলের শাখাগুলোর মধ্যে সেবার মানের তারতম্য চিহ্নিত করা যায়। যেমন: ঢাকা নর্থ, চট্টগ্রাম এবং ইস্ট রিজিয়নের ৬৮টি শাখার মাঝে কোন কোন শাখায় কাস্টমার কেয়ারে ঘাটতি রয়েছে তা সুনির্দিষ্ট ডেটা দ্বারা চিহ্নিত হয়।
 
-# Deploy directly from your terminal
-vercel --prod
-```
+### ৫. ওমনিচ্যানেল ও ডিজিটাল ব্যাংকিং সমন্বয় (Omnichannel Quality Assurance)
+শুধু কাউন্টার ব্যাংকিংই নয়; এটিএম বুথের সচলতা, ক্যাশ প্রাপ্যতা, মোবাইল অ্যাপস ফান্ড ট্রান্সফার (BEFTN/NPSB/RTGS) এবং কাস্টমার কেয়ার হেল্পলাইনের সমন্বিত কার্যকারিতা একই ফ্রেমে এনে সার্ভে রিপোর্ট প্রস্তুত করা হয়।
+
+### ৬. তথ্য-ভিত্তিক কৌশলগত সুপারিশ ও কর্মপরিকল্পনা প্রদান (Actionable Insights)
+IRC কেবল সমস্যা চিহ্নিত করে ক্ষান্ত হয় না; বরং প্রাপ্ত ডেটার ওপর ভিত্তি করে ব্যাংকের শীর্ষ ব্যবস্থাপনাকে কর্মীদের সুনির্দিষ্ট ট্রেনিং মডিউল তৈরি, কাউন্টার ভিড় কমানোর প্রযুক্তিগত সমাধান এবং গ্রাহক সন্তুষ্টি বাড়াতে কার্যকর অ্যাকশন প্ল্যান প্রদান করে।
 
 ---
 
-## 💻 Local Preview
-To test locally before deploying:
-```bash
-# Using python built-in server:
-python -m http.server 3000
-
-# Or using npx serve:
-npx serve .
-```
-Then visit `http://localhost:3000` in your web browser.
+## 📊 প্রকল্পের সারসংক্ষেপ (Project Scope)
+- **মোট শাখা:** দেশব্যাপী ৬৮টি কৌশলগত শাখা (চট্টগ্রাম রিজিয়ন: ২০টি, ঢাকা নর্থ রিজিয়ন: ২৩টি, ইস্ট রিজিয়ন: ২৫টি)।
+- **মোট কার্যক্রম:** ৬৯৮টি সুনির্দিষ্ট অডিট স্লট (শাখা ভেদে ৮, ১০ বা ১২টি পৃথক অ্যাক্টিভিটি)।
+- **ট্র্যাকিং মেকানিজম:** প্রতিটি অ্যাক্টিভিটির জন্য হ্যাঁ/না (☑ Yes / ☐ No) স্ট্যাটাস এবং সুনির্দিষ্ট তারিখ ও সময় লগ সংরক্ষণের ডিজিটাল ড্যাশবোর্ড ও এক্সেল মাস্টার সিস্টেম।
 
 ---
 
 ## 📄 License & Credits
-- **Client / Organization:** Innovative Creation Ltd. (IRC)
+- **Client / Organization:** Innovative Research & Consultancy Ltd. (IRC)
 - **Partner Institution:** Bank Asia
 - **Author:** Monour Hosan Saif ([@monourhosan](https://github.com/monourhosan))
 - **License:** MIT
