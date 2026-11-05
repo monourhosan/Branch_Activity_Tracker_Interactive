@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bank Asia & IRC — Branch Activities & Mystery Shopping Portal</title>
-  <meta name="description" content="ইনোভেটিভ ক্রিয়েশন লিমিটেড (IRC) ও ব্যাংক এশিয়া মিস্ট্রি শপিং ও ফিল্ড অডিট পোর্টাল। ৬৮টি ব্রাঞ্চ এবং ৬৯৮টি অ্যাক্টিভিটি ট্র্যাকিং।">
+  <meta name="description" content="ব্যাংক এশিয়া ও ইনোভেটিভ ক্রিয়েশন লিমিটেড (IRC) মিস্ট্রি শপিং ও ফিল্ড অ্যাক্টিভিটি ট্র্যাকিং পোর্টাল (৬৮টি শাখা, ৬৯৮টি অ্যাক্টিভিটি)।">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏦</text></svg>">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -47,10 +47,6 @@
       </div>
 
       <div class="flex items-center gap-2.5">
-        <button onclick="toggleBanglaInfo()" class="px-3.5 py-1.5 bg-blue-600 hover:bg-blue-500 text-white rounded-lg text-xs font-semibold flex items-center gap-1.5 transition shadow-sm">
-          <i class="fa-solid fa-circle-info"></i>
-          <span class="bn font-semibold">প্রকল্প গাইডলাইন ও প্রশ্নোত্তর</span>
-        </button>
         <button onclick="exportToCSV()" class="px-3.5 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg text-xs font-semibold flex items-center gap-1.5 transition shadow-sm" title="Export to CSV">
           <i class="fa-solid fa-file-csv"></i> Export CSV
         </button>
@@ -61,195 +57,27 @@
     </div>
   </header>
 
-  <!-- BANGLA PROJECT OVERVIEW & AUDIT GUIDELINE SECTION (From .docx Specification) -->
-  <section id="bangla-info-section" class="bg-gradient-to-b from-blue-50/60 to-white border-b border-slate-200 py-6 transition-all">
+  <!-- TOP BANNER: WHAT IS MYSTERY SHOPPING IN BANKING (3 TO 5 LINES IN BANGLA) -->
+  <section class="bg-gradient-to-r from-blue-900/5 via-slate-50 to-blue-900/5 border-b border-slate-200/80 py-4.5 no-print">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <!-- Section Header -->
-      <div class="flex flex-col md:flex-row items-start md:items-center justify-between pb-4 border-b border-blue-100 gap-3">
-        <div>
-          <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-blue-100 text-blue-800 text-xs font-bold mb-1.5">
-            <i class="fa-solid fa-shield-halved"></i>
-            <span class="bn">অফিসিয়াল ফিল্ড অডিট ও মিস্ট্রি শপিং ম্যানুয়াল</span>
-          </div>
-          <h2 class="text-xl font-bold text-slate-900 bn">
-            ব্যাংক এশিয়া মিস্ট্রি শপিং ও ব্রাঞ্চ অ্যাক্টিভিটি মূল্যায়ন নির্দেশিকা
-          </h2>
-          <p class="text-xs text-slate-600 bn mt-0.5">
-            ইনোভেটিভ ক্রিয়েশন লিমিটেড (IRC)-এর ফিল্ড অডিটর ও সমন্বয়কারীদের জন্য বিভিন্ন ব্যাংকিং প্রডাক্ট ও অ্যাকাউন্ট সংক্রান্ত প্রমিত প্রশ্নোত্তর ও অডিট গাইডলাইন
-          </p>
-        </div>
-
-        <button onclick="toggleBanglaInfo()" class="text-xs text-slate-500 hover:text-slate-800 flex items-center gap-1 bn font-semibold px-2.5 py-1 rounded border border-slate-200 bg-white shadow-sm">
-          <i class="fa-solid fa-compress text-slate-400"></i> গাইডলাইন লুকান / দেখান
-        </button>
-      </div>
-
-      <!-- Bangla Cards Grid -->
-      <div id="bangla-info-content" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4.5 mt-5">
+      <div class="bg-white rounded-xl border border-slate-200 p-4 sm:p-5 shadow-sm flex flex-col sm:flex-row items-start gap-4">
         
-        <!-- Card 1: Savings & Current Account -->
-        <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-4.5 flex flex-col justify-between hover:border-blue-300 transition">
-          <div>
-            <div class="flex items-center gap-2 text-blue-700 font-bold text-sm pb-2 border-b border-slate-100">
-              <i class="fa-solid fa-wallet text-base"></i>
-              <span class="bn">১. সেভিংস ও কারেন্ট অ্যাকাউন্ট নির্দেশিকা</span>
-            </div>
-            
-            <div class="mt-3 text-xs text-slate-700 space-y-2 bn leading-relaxed">
-              <p><strong>প্রয়োজনীয় কাগজপত্র:</strong> সম্পূর্ণ পূরণকৃত অ্যাকাউন্ট খোলার ফর্ম, আবেদনকারী ও নমিনির পাসপোর্ট সাইজের ছবি, জাতীয় পরিচয়পত্র (NID) / পাসপোর্ট / জন্ম নিবন্ধন, পেশা ও আয়ের উৎসের প্রমাণপত্র, ইউটিলিটি বিলের কপি এবং ১০ লাখ টাকার অধিক লেনদেনে ই-টিন (TIN) সার্টিফিকেট।</p>
-              <p><strong>প্রারম্ভিক জমা ও চার্জ:</strong> অ্যাকাউন্ট খুলতে কোনো অতিরিক্ত ফি নেই; ন্যূনতম প্রারম্ভিক জমা ৫০০ টাকা। ডেবিট কার্ড বার্ষিক ফি ৫০০ টাকা (+ভ্যাট), রিপ্লেসমেন্ট ফি ৩০০ টাকা (+ভ্যাট)।</p>
-              
-              <div class="bg-slate-50 p-2.5 rounded-lg border border-slate-200 mt-2">
-                <span class="font-bold text-slate-800 text-[11px]">বাৎসরিক মেইনটেন্যান্স ফি স্ল্যাব:</span>
-                <ul class="list-disc list-inside text-[11px] text-slate-600 mt-1 space-y-0.5">
-                  <li>গড় ব্যালেন্স ১০,০০০ টাকা পর্যন্ত: <strong>সম্পূর্ণ ফ্রি</strong></li>
-                  <li>১০,০০১ থেকে ২৫,০০০ টাকা: <strong>১০০ টাকা</strong></li>
-                  <li>২৫,০০১ থেকে ২,০০,০০০ টাকা: <strong>২০০ টাকা</strong></li>
-                  <li>২,০০,০০১ থেকে ১০,০০,০০০ টাকা: <strong>২৫০ টাকা</strong></li>
-                  <li>১০,০০,০০০ টাকার ঊর্ধ্বে: <strong>৩০০ টাকা</strong></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="mt-3 pt-2 text-[11px] text-blue-600 font-semibold bn border-t border-slate-50 flex items-center justify-between">
-            <span>চেক বই ও ডেবিট কার্ড: উভয়ই প্রদেয়</span>
-            <span>নিয়মাবলি যাচাইকৃত</span>
-          </div>
+        <div class="w-10 h-10 rounded-lg bg-blue-50 text-blue-700 border border-blue-200 flex items-center justify-center shrink-0 font-bold text-lg mt-0.5 shadow-sm">
+          <i class="fa-solid fa-user-secret"></i>
         </div>
 
-        <!-- Card 2: Fixed Deposit (FDR) -->
-        <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-4.5 flex flex-col justify-between hover:border-blue-300 transition">
-          <div>
-            <div class="flex items-center gap-2 text-indigo-700 font-bold text-sm pb-2 border-b border-slate-100">
-              <i class="fa-solid fa-piggy-bank text-base"></i>
-              <span class="bn">২. ফিক্সড ডিপোজিট (FDR) স্কিম</span>
-            </div>
-            
-            <div class="mt-3 text-xs text-slate-700 space-y-2 bn leading-relaxed">
-              <p><strong>মেয়াদ ও স্কিম:</strong> প্রচলিত ব্যাংকিংয়ে ১ মাস থেকে ৩ বছর এবং ইসলামিক ব্যাংকিংয়ে ১ মাস থেকে ৫ বছর মেয়াদি এফডিআর স্কিম চালু রয়েছে।</p>
-              <p><strong>বিদ্যমান গ্রাহকদের সুবিধা:</strong> ব্যাংক এশিয়ায় আগে থেকে সেভিংস বা কারেন্ট অ্যাকাউন্ট থাকলে পুনরায় পুরো ফর্ম পূরণ করতে হয় না; কেবল এক পাতার সংক্ষিপ্ত এফডিআর ফর্ম পূরণ করলেই চলবে।</p>
-              
-              <div class="bg-indigo-50/50 p-2.5 rounded-lg border border-indigo-100 mt-2">
-                <span class="font-bold text-indigo-900 text-[11px]">এফডিআরের বিপরীতে ঋণ (Loan Against FDR):</span>
-                <p class="text-[11px] text-indigo-800 mt-0.5">
-                  গ্রাহক তার এফডিআর মূল্যের <strong>সর্বোচ্চ ৯০% পর্যন্ত ঋণ</strong> নিতে পারেন। ঋণের সুদের হার হবে: <strong>‘এফডিআর সুদের হার + ৩%’</strong>।
-                </p>
-              </div>
+        <div class="space-y-1.5 flex-1">
+          <div class="flex items-center gap-2">
+            <h2 class="text-sm sm:text-base font-bold text-slate-900 bn">
+              ব্যাংকিং খাতে ‘মিস্ট্রি শপিং’ (Mystery Shopping) কী?
+            </h2>
+            <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-blue-100 text-blue-800 bn">প্রকল্প পরিচিতি</span>
+          </div>
 
-              <p class="text-[11px] text-slate-500 italic mt-1">ব্যাংক এশিয়ার রেট বাজার পরিস্থিতি ও নির্ভরযোগ্য নিরাপদ সঞ্চয় পরিবেশের আলোকে নির্ধারিত হয়।</p>
-            </div>
-          </div>
-          <div class="mt-3 pt-2 text-[11px] text-indigo-600 font-semibold bn border-t border-slate-50 flex items-center justify-between">
-            <span>ঋণ সুবিধা: ৯০% পর্যন্ত</span>
-            <span>সুদ: FDR রেট + ৩%</span>
-          </div>
-        </div>
-
-        <!-- Card 3: Deposit Pension Scheme (DPS) -->
-        <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-4.5 flex flex-col justify-between hover:border-blue-300 transition">
-          <div>
-            <div class="flex items-center gap-2 text-emerald-700 font-bold text-sm pb-2 border-b border-slate-100">
-              <i class="fa-solid fa-chart-line text-base"></i>
-              <span class="bn">৩. ডিপিএস (DPS) স্কিম ও ম্যাচুরিটি</span>
-            </div>
-            
-            <div class="mt-3 text-xs text-slate-700 space-y-2 bn leading-relaxed">
-              <p><strong>মেয়াদ ও কিস্তি:</strong> মেয়াদ ৩, ৫, ৭, ১০ এবং ১২ বছর। মাসিক কিস্তির পরিমাণ <strong>৫০০ টাকা থেকে শুরু করে ২০,০০০ টাকা</strong> পর্যন্ত সুবিধাজনক কিস্তিতে জমার ব্যবস্থা রয়েছে।</p>
-              <p><strong>ঋণ সুবিধা:</strong> জমা স্থিতির সর্বোচ্চ ৯০% পর্যন্ত ঋণ সুবিধা পাওয়া যাবে (সুদের হার: এফডিআর হার + ৩%)।</p>
-              
-              <div class="bg-emerald-50/50 p-2.5 rounded-lg border border-emerald-100 mt-2">
-                <span class="font-bold text-emerald-900 text-[11px]">ম্যাচুরিটি মানচিত্র (নমুনা কিস্তি):</span>
-                <div class="grid grid-cols-2 gap-1 text-[11px] text-emerald-800 mt-1">
-                  <div>১,০০০ টাকা (৫ বছর): ৩,৭২,৩৩০ টাকা</div>
-                  <div>২,০০০ টাকা (৫ বছর): ৭,৪৪,৬৬১ টাকা</div>
-                  <div>১,০০০ টাকা (১০ বছর): ৭,৩৯,০৬৮ টাকা</div>
-                  <div>৫,০০০ টাকা (১০ বছর): ৩৬,৯৫,৩৪০ টাকা</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="mt-3 pt-2 text-[11px] text-emerald-600 font-semibold bn border-t border-slate-50 flex items-center justify-between">
-            <span>কিস্তি: ৫০০ - ২০,০০০ টাকা</span>
-            <span>মেয়াদ: ৩ থেকে ১২ বছর</span>
-          </div>
-        </div>
-
-        <!-- Card 4: Retail Loans -->
-        <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-4.5 flex flex-col justify-between hover:border-blue-300 transition">
-          <div>
-            <div class="flex items-center gap-2 text-amber-700 font-bold text-sm pb-2 border-b border-slate-100">
-              <i class="fa-solid fa-hand-holding-dollar text-base"></i>
-              <span class="bn">৪. রিটেইল লোন সুবিধা (Personal, Home, Auto)</span>
-            </div>
-            
-            <div class="mt-3 text-xs text-slate-700 space-y-2 bn leading-relaxed">
-              <p>ব্যাংক এশিয়া গ্রাহকদের বহুমুখী চাহিদা বিবেচনায় প্রতিযোগিতামূলক সুদের হারে বিভিন্ন ঋণ সুবিধা প্রদান করে:</p>
-              
-              <div class="space-y-1.5 text-[11px] mt-2">
-                <div class="p-2 bg-slate-50 rounded border border-slate-200 flex justify-between items-center">
-                  <div><strong>পার্সোনাল লোন (Unsecured):</strong> সর্বোচ্চ ৪০ লাখ টাকা (মেয়াদ ৮ বছর)</div>
-                  <span class="font-bold text-amber-700">৯.৯৯% (টেকওভার ৮.৯৯%)</span>
-                </div>
-                <div class="p-2 bg-slate-50 rounded border border-slate-200 flex justify-between items-center">
-                  <div><strong>হোম লোন (Home Loan):</strong> সর্বোচ্চ ৪ কোটি টাকা (মেয়াদ ২৫ বছর)</div>
-                  <span class="font-bold text-amber-700">৯.৫০% (টেকওভার ৮.৫০%)</span>
-                </div>
-                <div class="p-2 bg-slate-50 rounded border border-slate-200 flex justify-between items-center">
-                  <div><strong>অটো লোন (Auto Loan):</strong> সর্বোচ্চ ৮০ লাখ টাকা (মেয়াদ ৮ বছর)</div>
-                  <span class="font-bold text-amber-700">৯.৯৯% (টেকওভার ৮.৯৯%)</span>
-                </div>
-              </div>
-              
-              <p class="text-[11px] text-slate-500 mt-1">ব্যাংক এশিয়ার দ্রুত ঋণ অনুমোদন, স্বচ্ছ প্রক্রিয়া এবং মানসম্মত কাস্টমার কেয়ার গ্রাহকদের অন্যতম প্রধান আস্থা।</p>
-            </div>
-          </div>
-          <div class="mt-3 pt-2 text-[11px] text-amber-700 font-semibold bn border-t border-slate-50 flex items-center justify-between">
-            <span>দ্রুত প্রসেসিং ও টেকওভার সুবিধা</span>
-            <span>স্বচ্ছ ঋণ প্রক্রিয়া</span>
-          </div>
-        </div>
-
-        <!-- Card 5: Credit Card -->
-        <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-4.5 flex flex-col justify-between hover:border-blue-300 transition">
-          <div>
-            <div class="flex items-center gap-2 text-purple-700 font-bold text-sm pb-2 border-b border-slate-100">
-              <i class="fa-solid fa-credit-card text-base"></i>
-              <span class="bn">৫. ক্রেডিট কার্ড (VISA Gold Card)</span>
-            </div>
-            
-            <div class="mt-3 text-xs text-slate-700 space-y-2 bn leading-relaxed">
-              <p><strong>কার্ড ধরন:</strong> ব্যাংক এশিয়া আকর্ষণীয় অফারসহ ভিসা গোল্ড কার্ড অফার করে।</p>
-              <p><strong>ন্যূনতম মাসিক বেতন প্রয়োজনীয়তা:</strong> বেতনভোগী চাকরিজীবীদের ক্ষেত্রে ন্যূনতম ৩০,০০০ টাকা এবং আরএমজি ও স্বনির্ভর পেশাজীবীদের জন্য ন্যূনতম ৪০,০০০ টাকা।</p>
-              <p><strong>বার্ষিক ফি:</strong> বাৎসরিক ফি ২,৫০০ টাকা। বছরে নির্দিষ্ট সংখ্যক POS লেনদেনের শর্ত পূরণ সাপেক্ষে বার্ষিক ফি ওয়েভ (মওকুফ) করা হয়।</p>
-              <p><strong>নিরাপত্তা ও সুবিধা:</strong> আধুনিক ফ্রড মনিটরিং, ২৪/৭ সার্বক্ষণিক কাস্টমার কেয়ার, মার্চেন্ট ডিসকাউন্ট এবং রিওয়ার্ড পয়েন্ট সুবিধা বিদ্যমান (ভিসা গোল্ডে লাউঞ্জ অ্যাক্সেস প্রযোজ্য নয়)।</p>
-            </div>
-          </div>
-          <div class="mt-3 pt-2 text-[11px] text-purple-700 font-semibold bn border-t border-slate-50 flex items-center justify-between">
-            <span>ন্যূনতম বেতন: ৩০,০০০ টাকা</span>
-            <span>ফি ওয়েভ সুবিধা বিদ্যমান</span>
-          </div>
-        </div>
-
-        <!-- Card 6: Islamic Banking Window -->
-        <div class="bg-white rounded-xl border border-slate-200 shadow-sm p-4.5 flex flex-col justify-between hover:border-blue-300 transition">
-          <div>
-            <div class="flex items-center gap-2 text-teal-700 font-bold text-sm pb-2 border-b border-slate-100">
-              <i class="fa-solid fa-mosque text-base"></i>
-              <span class="bn">৬. ইসলামিক ব্যাংকিং উইন্ডো</span>
-            </div>
-            
-            <div class="mt-3 text-xs text-slate-700 space-y-2 bn leading-relaxed">
-              <p><strong>ইসলামিক সঞ্চয় স্কিম:</strong> মুদারাবা হজ সঞ্চয় স্কিম (MHSS) এবং মুদারাবা ডিপোজিট পেনশন স্কিম (MDPS)।</p>
-              <p><strong>প্রয়োজনীয় ডকুমেন্টস:</strong> আবেদনকারীর ছবি, NID/পাসপোর্ট কপি, নমিনির সত্যায়িত ছবি ও NID, পূরণকৃত ফর্ম, আয়ের উৎস এবং ইউটিলিটি বিলের কপি।</p>
-              <p><strong>করজে হাসানা / লোন সুবিধা:</strong> মুদারাবা টার্ম ডিপোজিটের বিপরীতে ৮০% পর্যন্ত কিউ-অর্ড (ঋণ) সুবিধা (ন্যূনতম মূলধন ১ লাখ টাকা সাপেক্ষে)। এ ক্ষেত্রে গৃহীত ঋণ অংশের ওপর কোনো মুনাফা প্রযোজ্য হবে না।</p>
-              <p>ইসলামিক অর্থায়নে স্বচ্ছ শরিয়াহ বোর্ড তত্ত্বাবধান ও শরিয়াহ সম্মত প্রফিট শেয়ারিং নিশ্চিত করা হয়।</p>
-            </div>
-          </div>
-          <div class="mt-3 pt-2 text-[11px] text-teal-700 font-semibold bn border-t border-slate-50 flex items-center justify-between">
-            <span>মুদারাবা হজ ও ডিপিএস স্কিম</span>
-            <span>শরিয়াহসম্মত করজে হাসানা</span>
-          </div>
+          <!-- 3 to 5 Lines Bangla Information -->
+          <p class="text-xs sm:text-[13px] text-slate-700 leading-relaxed bn">
+            ব্যাংকিং খাতে <strong>মিস্ট্রি শপিং</strong> হলো একটি প্রাতিষ্ঠানিক ও নিরপেক্ষ মূল্যায়ন পদ্ধতি, যেখানে প্রশিক্ষিত অডিটররা সাধারণ গ্রাহকের ছদ্মবেশে ব্যাংকের বিভিন্ন শাখা পরিদর্শন করেন। এর প্রধান উদ্দেশ্য হলো অ্যাকাউন্ট খোলা, নগদ জমা-উত্তোলন, এটিএম ও কাস্টমার কেয়ারে কর্মকর্তাদের সেবা প্রদানের গতি, পেশাদারিত্ব এবং ব্যাংকিং কমপ্লায়েন্স পুঙ্খানুপুঙ্খভাবে পর্যবেক্ষণ করা। শাখা কর্মীদের পূর্বঘোষণা ছাড়াই মাঠপর্যায়ে বাস্তব অভিজ্ঞতা প্রত্যক্ষ করার মাধ্যমে সেবার মান ও ঘাটতি চিহ্নিত করা হয়। প্রাপ্ত তথ্যের ভিত্তিতে সেবা প্রক্রিয়াকে আরও দ্রুত, স্বচ্ছ ও গ্রাহকবান্ধব করাই এই ফিল্ড প্রকল্পের মূল লক্ষ্য।
+          </p>
         </div>
 
       </div>
@@ -419,15 +247,6 @@
     let currentTier = 'ALL';
     let currentView = 'cards';
     let searchTerm = '';
-
-    function toggleBanglaInfo() {
-      const sec = document.getElementById('bangla-info-content');
-      if (sec.classList.contains('hidden')) {
-        sec.classList.remove('hidden');
-      } else {
-        sec.classList.add('hidden');
-      }
-    }
 
     function saveState() {
       localStorage.setItem("irc_ba_branch_tracker_data", JSON.stringify(branches));
